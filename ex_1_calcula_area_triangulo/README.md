@@ -1,17 +1,18 @@
 # ex_1_calcula_area_triangulo
 
-A new Flutter project.
+Exercício iniciante em Flutter: **calcular a área de um triângulo** a partir da **base** e da **altura**.
 
-## Getting Started
+A fórmula usada é:
 
-This project is a starting point for a Flutter application.
+**Área = (base × altura) ÷ 2**
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Objetivo do exercício
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Treinar criação de telas no Flutter
+- Usar `TextField` para entrada de dados
+- Capturar valores digitados pelo usuário
+- Converter texto para número (`double`)
+- Fazer um cálculo simples
+- Exibir resultado na tela
