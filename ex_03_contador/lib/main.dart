@@ -32,14 +32,14 @@ class _CounterPageState extends State<CounterPage> {
       counter++;
     });
   }
-  
-    void decrementCounter() {
+
+  void decrementCounter() {
     setState(() {
       counter--;
     });
   }
 
-      void resetCounter() {
+  void resetCounter() {
     setState(() {
       counter = 0;
     });
@@ -48,36 +48,86 @@ class _CounterPageState extends State<CounterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 182, 182, 184),
       appBar: AppBar(title: const Text('Contador')),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'O valor do contador é: $counter',
-              style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: decrementCounter,
-                  child: const Text('Diminuir'),
-                ),
-                const SizedBox(width: 20),
-                ElevatedButton(onPressed: incrementCounter,
-                child: const Text('Aumentar'),
-                ),
-                const SizedBox(width: 20),
-                ElevatedButton(onPressed: resetCounter,
-                child: const Text('Resetar'),
-                ),
-              ],
-            ),
-          ],
+        child: Container(
+          width: 325,
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10,
+                offset: Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              buildLabel(),
+              const SizedBox(height: 10),
+              buildCounterValue(),
+              const SizedBox(height: 20),
+              buildButtonsRow(),
+              const SizedBox(height: 20),
+              buildResetButton(),
+            ],
+          ),
         ),
-      )
+      ),
+    );
+  }
+
+  Widget buildLabel() {
+    return const Text(
+      'Valor atual é:',
+      style: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: Colors.grey,
+      ),
+    );
+  }
+
+  Widget buildCounterValue() {
+    return Text(
+      '$counter',
+      style: const TextStyle(
+        fontSize: 40,
+        fontWeight: FontWeight.bold,
+        color: Colors.grey,
+      ),
+    );
+  }
+
+  Widget buildButtonsRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          onPressed: decrementCounter,
+          child: const Text('Diminuir'),
+        ),
+        const SizedBox(width: 20),
+        ElevatedButton(
+          onPressed: incrementCounter,
+          child: const Text('Aumentar'),
+        ),
+      ],
+    );
+  }
+
+  Widget buildResetButton() {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: resetCounter,
+        child: const Text('Resetar'),
+      ),
     );
   }
 }
