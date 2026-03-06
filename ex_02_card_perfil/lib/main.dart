@@ -9,81 +9,67 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ProfilePage(),
-      );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: ProfilePage());
   }
 }
 
-class ProfilePage extends StatelessWidget{
+class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white70,
-        appBar: AppBar(
-          title: const Text('Card Perfil')),
-        body: Center(
-          child: Container(
-            width: 320,
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: const [
-                BoxShadow( 
-                  color: Colors.black12,
-                  blurRadius: 10,
-                  offset: Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                buildAvatar(),
-                const SizedBox(height: 15),
-                buildName(),
-                const SizedBox(height: 5),
-                buildInfoRow(),
-                const SizedBox(height: 20),
-                buildActionButton(),
-              ],
-            ),
+      backgroundColor: Colors.white70,
+      appBar: AppBar(title: const Text('Card Perfil')),
+      body: Center(
+        child: Container(
+          width: 320,
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 10,
+                offset: Offset(0, 4),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              buildAvatar(),
+              const SizedBox(height: 15),
+              buildName(),
+              const SizedBox(height: 5),
+              buildInfoRow(),
+              const SizedBox(height: 20),
+              buildActionButton(),
+            ],
           ),
         ),
-      );
-
-
-}
+      ),
+    );
+  }
 }
 
 Widget buildAvatar() {
   return const CircleAvatar(
     radius: 45,
     backgroundColor: Colors.blueAccent,
-    child: Icon(  
-      Icons.person,
-      size: 45,
-      color: Colors.white,
-      ),
-    );
+    child: Icon(Icons.person, size: 45, color: Colors.white),
+  );
 }
 
 Widget buildName() {
-  return const Text('User Test',
-    style: TextStyle(
-      fontSize: 22,
-      fontWeight: FontWeight.bold,
-      ),
-    );
+  return const Text(
+    'User Test',
+    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+  );
 }
 
-
-
-Widget buildInfoRow(){
+Widget buildInfoRow() {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
@@ -108,7 +94,7 @@ Widget buildInfoRow(){
           Text('usertest@email.com'),
         ],
       ),
-        Column(
+      Column(
         children: const [
           Icon(Icons.code, color: Colors.blueAccent),
           SizedBox(height: 6),
@@ -119,12 +105,9 @@ Widget buildInfoRow(){
   );
 }
 
-Widget buildActionButton(){
+Widget buildActionButton() {
   return SizedBox(
     width: double.infinity,
-    child: ElevatedButton(
-      onPressed: () {},
-      child: const Text('Saiba mais'),
-    ),
+    child: ElevatedButton(onPressed: () {}, child: const Text('Saiba mais')),
   );
 }
