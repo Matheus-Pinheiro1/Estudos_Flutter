@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Contador',
       debugShowCheckedModeBanner: false,
-      home:  CounterPage(),
+      home: CounterPage(),
     );
   }
 }
@@ -25,17 +25,32 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
-  @override
-    Widget build(BuildContext context){
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('Contador'),
-        ),
-        body: const Center(
-          child: Text('Contador aqui'),
-        ),
-      );
-    }
-  }
+  int counter = 0;
 
-  
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Contador')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'O valor do contador é: $counter',
+              style: const TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter++;
+                });
+              },
+              child: const Text('Aumentar'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
