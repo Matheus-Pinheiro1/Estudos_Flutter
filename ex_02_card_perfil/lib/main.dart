@@ -30,10 +30,71 @@ class MyApp extends StatelessWidget {
                 ),
               ],
             ),
-            child: const Text('Card Aqui'),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                CircleAvatar(
+                  radius: 46,
+                  backgroundColor: Colors.blueAccent,
+                  child: Icon(  
+                    Icons.person,
+                    size: 46,
+                    color: Colors.white,
+                    ),
+                  ),
+                SizedBox(height: 16),
+                Text('User Test',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 9),
+                Text('Flutter Developer',
+                  style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey,
+                  ),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: const [
+                          Icon(Icons.location_on, color: Colors.blueAccent),
+                          SizedBox(height: 6),
+                          Text('Brasilia'),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Icon(Icons.cake, color: Colors.blueAccent),
+                          SizedBox(height: 6),
+                          Text('27 anos'),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Icon(Icons.email, color: Colors.blueAccent),
+                          SizedBox(height: 6),
+                          Text('usertest@email.com'),
+                        ],
+                      ),
+                        Column(
+                        children: const [
+                          Icon(Icons.code, color: Colors.blueAccent),
+                          SizedBox(height: 6),
+                          Text('Flutter, Dart, Ruby on Rails'),
+                        ],
+                      ),
+                    ],
+                  )
+              ],
+                ),
+            ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
