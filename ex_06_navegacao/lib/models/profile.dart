@@ -4,7 +4,7 @@ class Profile {
   final String city;
   final String description;
 
-  Profile({
+  const Profile({
    required this.name,
    required this.role,
    required this.city,
