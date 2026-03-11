@@ -5,11 +5,9 @@ class Profile {
   final String description;
 
   const Profile({
-   required this.name,
-   required this.role,
-   required this.city,
-   required this.description,
+    required this.name,
+    required this.role,
+    required this.city,
+    required this.description,
+  });
 }
-);
-}
-      

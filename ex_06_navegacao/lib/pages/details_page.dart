@@ -4,19 +4,13 @@ import '../models/profile.dart';
 class DetailsPage extends StatelessWidget {
   final Profile profile;
 
-  const DetailsPage({
-    super.key,
-    required this.profile,
-    });
+  const DetailsPage({super.key, required this.profile});
 
-
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 247, 248, 248),
-      appBar: AppBar(
-        title: const Text('Detalhes'),
-      ),
+      appBar: AppBar(title: const Text('Detalhes')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Center(
@@ -30,56 +24,65 @@ class DetailsPage extends StatelessWidget {
                 BoxShadow(
                   blurRadius: 10,
                   offset: Offset(0, 4),
-                  color: Colors.black12, 
+                  color: Colors.black12,
                 ),
               ],
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const CircleAvatar(
-                  radius: 40,
-                  child: Icon(Icons.person, size: 40),
-                ),
+                buildAvatar(),
                 const SizedBox(height: 16),
-                Text(
-                  profile.name,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
+                buildName(),
                 const SizedBox(height: 8),
-                Text(
-                  profile.role,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.grey,
-                  ),
-                ),
+                buildRole(),
                 const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.location_city, color: Colors.blueAccent),
-                    const SizedBox(width: 6),
-                    Text(profile.city),
-                  ],
-                ),
+                buildCityRow(),
                 const SizedBox(height: 16),
-                Text(
-                  profile.description,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                )
+                buildDescription(),
               ],
             ),
           ),
         ),
-        )
+      ),
+    );
+  }
+
+  Widget buildAvatar() {
+    return const CircleAvatar(radius: 40, child: Icon(Icons.person, size: 40));
+  }
+
+  Widget buildName() {
+    return Text(
+      profile.name,
+      style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+      textAlign: TextAlign.center,
+    );
+  }
+
+  Widget buildRole() {
+    return Text(
+      profile.role,
+      style: const TextStyle(fontSize: 18, color: Colors.grey),
+    );
+  }
+
+  Widget buildCityRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Icon(Icons.location_city, color: Colors.blueAccent),
+        const SizedBox(width: 6),
+        Text(profile.city),
+      ],
+    );
+  }
+
+  Widget buildDescription() {
+    return Text(
+      profile.description,
+      textAlign: TextAlign.center,
+      style: const TextStyle(fontSize: 16),
     );
   }
 }

@@ -30,9 +30,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 247, 248, 248),
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Perfis')),
+      appBar: AppBar(centerTitle: true, title: const Text('Perfis')),
       body: ListView.builder(
         itemCount: profiles.length,
         itemBuilder: (context, index) {
@@ -44,26 +42,23 @@ class HomePage extends StatelessWidget {
     );
   }
 
-
-  Widget buildProfileItem(BuildContext context, Profile profile){
-    return  Card(
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: ListTile(
-                leading: const CircleAvatar(
-                child: Icon(Icons.person),
-              ),
-              title: Text(profile.name),
-              subtitle: Text(profile.role),
-              trailing: const Icon(Icons.arrow_forward_ios),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DetailsPage(profile: profile),
-                  ),
-                );
-              },
+  Widget buildProfileItem(BuildContext context, Profile profile) {
+    return Card(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      child: ListTile(
+        leading: const CircleAvatar(child: Icon(Icons.person)),
+        title: Text(profile.name),
+        subtitle: Text(profile.role),
+        trailing: const Icon(Icons.arrow_forward_ios),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailsPage(profile: profile),
             ),
           );
+        },
+      ),
+    );
   }
 }
