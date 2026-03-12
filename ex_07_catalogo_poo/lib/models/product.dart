@@ -12,4 +12,10 @@ class Product {
     required this.description,
     required this.isOnSale,
   });
+
+  String get formattedPrice{
+    return 'R\$ ${price.toStringAsFixed(2)}';
+  }
+
+
 }
