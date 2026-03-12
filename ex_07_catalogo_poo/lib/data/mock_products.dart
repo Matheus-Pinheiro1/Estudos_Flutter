@@ -7,7 +7,7 @@ const List<Product> mockProducts = [
     category: 'Roupas',
     description: 'Lorem ipsum dolor sit amet',
     isOnSale: false,
-    ),
+  ),
 
   Product(
     name: 'Placa de vídeo',
@@ -15,7 +15,7 @@ const List<Product> mockProducts = [
     category: 'Eletrônicos',
     description: 'Lorem ipsum dolor sit amet',
     isOnSale: true,
-    ),
+  ),
 
   Product(
     name: 'Violão',
@@ -23,7 +23,7 @@ const List<Product> mockProducts = [
     category: 'Instrumentos Musicais',
     description: 'Lorem ipsum dolor sit amet',
     isOnSale: false,
-    ),    
+  ),
 
   Product(
     name: 'Caneca',
@@ -31,7 +31,7 @@ const List<Product> mockProducts = [
     category: 'Acessórios',
     description: 'Lorem ipsum dolor sit amet',
     isOnSale: false,
-    ),
+  ),
 
   Product(
     name: 'Secador de Cabelo',
@@ -39,5 +39,5 @@ const List<Product> mockProducts = [
     category: 'Produtos de cabelo',
     description: 'Lorem ipsum dolor sit amet',
     isOnSale: true,
-    ),    
+  ),
 ];

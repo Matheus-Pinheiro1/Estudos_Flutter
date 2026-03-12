@@ -13,9 +13,11 @@ class Product {
     required this.isOnSale,
   });
 
-  String get formattedPrice{
+  String get formattedPrice {
     return 'R\$ ${price.toStringAsFixed(2)}';
   }
 
-
+  String get saleLabel {
+    return isOnSale ? 'Em promoção' : 'Preço normal';
+  }
 }
